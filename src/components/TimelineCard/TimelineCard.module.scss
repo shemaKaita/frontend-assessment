@@ -1,0 +1,77 @@
+@import '../../common/styles/variables';
+
+.root {
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-300;
+    width: $timeline-card-width;
+    height: $timeline-card-height;
+    padding: $spacing-2;
+    border-radius: $radius-1;
+    text-align: center;
+    font-size: $font-m;
+    font-weight: $font-weight-regular;
+    box-shadow: $shadow-1;
+    box-sizing: border-box;
+
+    &--top {
+        &:before {
+            content: '';
+            position: absolute;
+            width: $size-0;
+            height: $size-3;
+            background-color: $primary-100;
+            bottom: -30px;
+            left: calc(50% - ($size-0 / 2));
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: $size-2 solid transparent;
+            border-right: $size-2 solid transparent;
+            border-top: $size-2 solid $primary-300;
+            bottom: -$spacing-2;
+            left: calc(50% - $size-2);
+        }
+    }
+
+    &--bottom {
+        &:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: $size-2 solid transparent;
+            border-right: $size-2 solid transparent;
+            border-bottom: $size-2 solid $primary-300;
+            top: -$spacing-2;
+            left: calc(50% - $size-2);
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: $size-0;
+            height: $size-3;
+            background-color: $primary-100;
+            top: -30px;
+            left: calc(50% - ($size-0 / 2));
+        }
+    }
+
+    &--final {
+        background-color: $primary-100;
+        height: fit-content;
+
+        &:before {
+            border-bottom-color: $primary-100;
+            left: calc(100% - ($spacing-3 * 2));
+        }
+
+        &:after {
+            left: calc(100% - (($spacing-3 * 2) - ($spacing-3 / 2) + ($size-0 / 2)));
+        }
+    }
+}
