@@ -1,0 +1,137 @@
+@import '../../common/styles/variables';
+
+.root {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(606rem / $base-font-size); // 606px
+    width: calc(990rem / $base-font-size); // 990px
+    background-color: $primary-200;
+}
+
+.track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: calc(50% - 30px); // not the most elegant solution
+        height: $size-0;
+        width: calc(100% - $spacing-7);
+        background-color: $neutral-0;
+    }
+}
+
+.trackColumn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: $spacing-3;
+    min-width: $timeline-card-width;
+    height: calc(413rem / $base-font-size); // 467px
+
+    &:last-of-type {
+        margin-left: $spacing-7;
+    }
+}
+
+.cardContainerTop {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.cardContainerBottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.dateDot {
+    height: $size-2;
+    width: $size-2;
+    border-radius: $radius-rounded;
+    background-color: $teal;
+    border-left: 3px solid $primary-200;
+    border-right: 3px solid $primary-200;
+}
+
+.dateLabel {
+    max-width: calc(114rem / $base-font-size);
+    opacity: .6;
+}
+
+.trackStart {
+    @extend .trackColumn;
+
+    &:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: calc(50% - 30px); // not the most elegant solution
+        height: $size-0;
+        width: 40%;
+        background-color: $neutral-0;
+    }
+}
+
+.trackStartDot {
+    position: absolute;
+    top: calc(50% - (30px + $size-2));
+    height: $size-2;
+    width: $size-2;
+    border-radius: $radius-rounded;
+    background-color: $primary-200;
+    border: 5px solid $teal;
+}
+
+.trackStartLabel {
+    opacity: .6;
+}
+
+.trackEnd {
+    @extend .trackColumn;
+    
+    &:last-of-type {
+        margin-left: $spacing-2;
+    }
+
+    .cardContainerBottom {
+        bottom: -79px; // Adjusted to fit the design
+    }
+}
+
+.trackEndLine {
+    position: absolute;
+    left: -50%;
+    top: calc(50% - 30px); // not the most elegant solution
+    border-top: 2px dotted $neutral-0;
+    width: 140%;
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: -$size-2;
+        top: calc(50% - $size-2);
+        width: 12px;
+        height: 12px;
+        border-right: 2px solid $neutral-0;
+        border-top: 2px solid $neutral-0;
+        transform: rotate(45deg);
+    }
+}
+
+.trackEndLabel {
+    opacity: .6;
+    align-self: flex-end;
+    margin-bottom: -$spacing-3;
+}
