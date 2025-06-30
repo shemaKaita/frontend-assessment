@@ -1,0 +1,63 @@
+// System colors
+$primary-100: #3C7F90;
+$primary-200: #215A6B;
+$primary-300: #173F4B;
+$teal: #00B897;
+
+// Font colors
+$neutral-0: #FFF;
+
+// Font sizes
+$base-font-size: 16;
+$font-m: calc(14rem / $base-font-size);
+$font-l: calc(16rem / $base-font-size);
+$font-xl: calc(18rem / $base-font-size);
+$font-xxl: calc(20rem / $base-font-size);
+
+// Font weights
+$font-weight-regular: 400;
+
+// Sizing map
+$sizes: (
+    '0': calc(2rem / $base-font-size), // 2px
+    '1': calc(4rem / $base-font-size), // 4px
+    '2': calc(8rem / $base-font-size), // 8px
+    '3': calc(16rem / $base-font-size), // 16px
+    '4': calc(24rem / $base-font-size), // 24px
+    '5': calc(32rem / $base-font-size), // 32px
+    '6': calc(48rem / $base-font-size), // 48px
+    '7': calc(64rem / $base-font-size)  // 64px
+);
+
+// Spacing
+$spacing-0: map-get($sizes, '0');
+$spacing-1: map-get($sizes, '1');
+$spacing-2: map-get($sizes, '2');
+$spacing-3: map-get($sizes, '3');
+$spacing-4: map-get($sizes, '4');
+$spacing-5: map-get($sizes, '5');
+$spacing-6: map-get($sizes, '6');
+$spacing-7: map-get($sizes, '7');
+
+// Sizes
+$size-0: map-get($sizes, '0');
+$size-1: map-get($sizes, '1');
+$size-2: map-get($sizes, '2');
+$size-3: map-get($sizes, '3');
+$size-4: map-get($sizes, '4');
+$size-5: map-get($sizes, '5');
+$size-6: map-get($sizes, '6');
+$size-7: map-get($sizes, '7');
+
+// Radius
+$radius-1: 5px;
+$radius-rounded: 50%;
+
+// Shadows
+$shadow-1: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+// Miscellaneous
+$timeline-card-width: calc(130rem / $base-font-size); // 130px
+$timeline-card-height: calc(136rem / $base-font-size); // 136px
+
+
